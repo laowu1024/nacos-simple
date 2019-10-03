@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: service-consumer-config
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.1.110:8848
+        file-extension: yaml

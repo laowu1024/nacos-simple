@@ -1,0 +1,21 @@
+spring:
+  server: 8080
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.1.110:8848
+    sentinel:
+      transport:
+        dashboard: 192.168.1.110:8080
+
+feign:
+  sentinel:
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+userName: "小脑斧"
