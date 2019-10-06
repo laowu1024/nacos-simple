@@ -1,0 +1,31 @@
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+server:
+  port: 9091
+
+spring:
+  application:
+    name: rocketmq-consume
+  cloud:
+    stream:
+      rocketmq:
+        binder:
+          name-server: 192.168.1.110:9876
+        bindings:
+          input:
+            consumer:
+              orderly: true
+      bindings:
+        input:
+          content-type: text/plain
+          destination: test-topic
+          group: test-group1
+
+

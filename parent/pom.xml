@@ -14,6 +14,8 @@
     <modules>
         <module>prod</module>
         <module>cosm</module>
+        <module>rocketmq-produce</module>
+        <module>rocketmq-consume</module>
     </modules>
 
     <dependencyManagement>
@@ -28,7 +30,16 @@
                 <artifactId>nacos-client</artifactId>
                 <version>1.1.0</version>
             </dependency>
+
+            <!-- spring-cloud-rocketmq -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
+                <version>0.2.2.BUILD-SNAPSHOT</version>
+            </dependency>
         </dependencies>
+
+
     </dependencyManagement>
 
 
@@ -47,4 +58,15 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>spring-snapshot</id>
+            <name>Spring Snapshot Repository</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>
